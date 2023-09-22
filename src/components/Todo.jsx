@@ -1,39 +1,23 @@
 import React, { useContext } from "react";
-import { todosContext } from "../App";
+import { TodoContext } from "../contexts/TodoContext";
 
-const Todo = ({ todo }) => {
-    const { editId, handleCheck, handleDelete, handleEdit, setEditId } =
-        useContext(todosContext);
-    return (
-        <li className="todo" key={todo.id}>
-            <input
-                type="checkbox"
-                checked={todo.completed}
-                onChange={() => handleCheck(todo.id)}
-            />
-            {editId === todo.id ? (
-                <input type="text" value={todo.title} onChange={handleEdit} />
-            ) : (
-                <span className={`todo-title ${todo.completed && "checked"}`}>
-                    {todo.title}
-                </span>
-            )}
-            {editId === todo.id ? (
-                <button onClick={() => setEditId(null)}>✅</button>
-            ) : (
-                <button
-                    className="del-button"
-                    onClick={() => setEditId(todo.id)}
-                    disabled={todo.completed}
-                >
-                    ✏️
-                </button>
-            )}
-            <button className="del-button" onClick={() => handleDelete(todo.id)}>
-                🗑️
-            </button>
-        </li>
-    );
-};
+const TodoItem = ({ todo }) => {
+    const { handleEdit, handleCheck, editId, setEditId, handleDelete } = useContext(TodoContext);
+    const { id, title, completed } = todo;
+    return <li className="todo">
+        <input type="checkbox" checked={completed} onChange={() => handleCheck(id)} />
+        {editId === id ? <input type="text" value={title} onChange={handleEdit} /> : <span className={`todo-title ${completed && "checked"}`}>
+            {title}
+        </span>}
+        {editId === id ? <button onClick={() => setEditId(null)}>
+            ✅
+        </button> : <button className="del-button" onClick={() => setEditId(id)} disabled={completed}>
+            ✏️
+        </button>}
+        <button className="del-button" onClick={() => handleDelete(id)}>
+            🗑️
+        </button>
+    </li>;
+}
 
-export default Todo;
+export default TodoItem;

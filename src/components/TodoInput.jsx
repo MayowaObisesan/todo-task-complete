@@ -1,21 +1,17 @@
 import React, { useContext } from "react";
-import { todosContext } from "../App";
+import { TodoContext } from "../contexts/TodoContext";
 
 const TodoInput = () => {
-    const { todoRef, handleCreate } = useContext(todosContext);
+    const { inputValue, setInputValue, handleAddTodo } = useContext(TodoContext);
+
     return (
-        <form onSubmit={handleCreate}>
-            <input
-                type="text"
-                className="todo-input"
-                name="todo-input"
-                ref={todoRef}
-            />
-            <button className="todo-submit" type="submit">
-                Submit
+        <div className="todo-input">
+            <input type="text" value={inputValue} onChange={e => setInputValue(e.target.value)} />
+            <button className="input-submit" onClick={handleAddTodo} disabled={inputValue.length < 3} >
+                Add to Todo
             </button>
-        </form>
+        </div>
     );
-};
+}
 
 export default TodoInput;

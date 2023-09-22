@@ -1,21 +1,16 @@
+import TodoItem from './Todo';
 import React, { useContext } from "react";
-import { todosContext } from "../App";
+import { TodoContext } from "../contexts/TodoContext";
 
-const TodoInput = () => {
-    const { todoRef, handleCreate } = useContext(todosContext);
+const Todos = () => {
+    const { todos } = useContext(TodoContext);
     return (
-        <form onSubmit={handleCreate}>
-            <input
-                type="text"
-                className="todo-input"
-                name="todo-input"
-                ref={todoRef}
-            />
-            <button className="todo-submit" type="submit">
-                Submit
-            </button>
-        </form>
+        <ul>
+            {!!todos.length && todos.map(
+                todo => <TodoItem todo={todo} key={todo.id} />
+            )}
+        </ul>
     );
-};
+}
 
-export default TodoInput;
+export default Todos;
