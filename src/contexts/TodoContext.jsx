@@ -24,6 +24,20 @@ export const TodoProvider = ({ children }) => {
     }, []);
 
     const handleCheck = (id) => {
+        // const targetTodo = todos.find((todo) => todo.id === id);
+
+        // const targetTodoIndex = todos.findIndex((todo) => todo.id === id);
+
+        // if (!targetTodo || targetTodoIndex === -1) return;
+
+        // targetTodo.completed = !targetTodo.completed;
+
+        // const newTodos = [...todos];
+
+        // newTodos[targetTodoIndex] = targetTodo;
+
+        // setTodos(newTodos);
+
         const newTodos = todos.map((todo) =>
             todo.id === id ? { ...todo, completed: !todo.completed } : todo
         );
@@ -36,6 +50,20 @@ export const TodoProvider = ({ children }) => {
     };
 
     const handleEdit = (e) => {
+        // const targetTodo = todos.find((todo) => todo.id === id);
+
+        // const targetTodoIndex = todos.findIndex((todo) => todo.id === id);
+
+        // if (!targetTodo || targetTodoIndex === -1) return;
+
+        // targetTodo.completed = !targetTodo.completed;
+
+        // const newTodos = [...todos];
+
+        // newTodos[targetTodoIndex] = targetTodo;
+
+        // setTodos(newTodos);
+
         const newTodos = todos.map((todo) =>
             todo.id === editId ? { ...todo, title: e.target.value } : todo
         );
