@@ -6,6 +6,7 @@ export const TodoProvider = ({ children }) => {
     const [todos, setTodos] = useState([]);
     const [editId, setEditId] = useState(null);
     const [inputValue, setInputValue] = useState('');
+    const [todoTextChanged, setTodoTextChanged] = useState(false);
 
     useEffect(() => {
         let canceled = false;
@@ -68,6 +69,7 @@ export const TodoProvider = ({ children }) => {
             todo.id === editId ? { ...todo, title: e.target.value } : todo
         );
         setTodos(newTodos);
+        setTodoTextChanged(true);
     };
 
     const handleAddTodo = () => {
@@ -92,7 +94,9 @@ export const TodoProvider = ({ children }) => {
             handleAddTodo,
             handleDelete,
             handleCheck,
-            handleEdit
+            handleEdit,
+            todoTextChanged,
+            setTodoTextChanged
         }}>
             {children}
         </TodoContext.Provider>

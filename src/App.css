@@ -2,6 +2,42 @@
     background-color: #FFF;
 }
 
+.react-tabs {
+    position: relative;
+    /* background-color: blue !important; */
+}
+
+.react-tabs__tab-list {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    background-color: whitesmoke;
+}
+
+.react-tabs__tab-panel {
+    position: relative;
+    /* display: block !important; */
+    height: 100%;
+    /* background: purple; */
+}
+
+.react-tabs__tab-panel--selected {
+    display: block;
+    width: 100%;
+    padding: 40px 40px;
+}
+
+.react-tabs__tab {
+    /* margin: 4px 0; */
+    display: block;
+    padding: 40px 16px;
+    background: inherit;
+}
+
+.react-tabs__tab--selected {
+    display: none;
+}
+
 .todo-input-container {
     width: 18rem;
     margin: auto;
@@ -76,6 +112,8 @@
     width: 100%;
     border-radius: 4px;
     margin: 0 16px;
+    padding: 0 8px;
+    transition: padding .4s ease-in;
 }
 
 .todo-title {
@@ -104,5 +142,5 @@
 
 .checked {
     text-decoration: line-through;
-    color: red;
+    color: darkgray;
 }
