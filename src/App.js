@@ -20,14 +20,15 @@ const App = () => (
 
                 <TabPanel className={"react-tabs__tab-panel"}>
                     <div className={"todo-wrappe"}>
-                        <div className={"text-3xl font-semibold py-8 sticky top-0"}>
+                        <div className={"text-3xl font-semibold py-8 sticky top-0 backdrop-blur-sm bg-white/90"}>
+                            <button type={"button"} className={"absolute right-0 top-4 text-base bg-blue-300 text-white p-4 rounded-lg cursor-not-allowed"}>Mark all as Complete</button>
                             <span className={"fa fa-list-check pr-4"}></span> All Todos
                         </div>
                         <Todos />
                     </div>
                 </TabPanel>
                 <TabPanel className={"react-tabs__tab-panel"}>
-                    <div className={"text-3xl font-semibold py-8 sticky top-0"}>
+                    <div className={"text-3xl font-semibold py-8 sticky top-0 backdrop-blur-sm bg-white/90"}>
                         <span className={"fa fa-square-check pr-4"}></span> Completed Todos
                     </div>
                     <div>
@@ -35,7 +36,7 @@ const App = () => (
                     </div>
                 </TabPanel>
                 <TabPanel className={"react-tabs__tab-panel"}>
-                    <div className={"text-3xl font-semibold py-8 sticky top-0"}>
+                    <div className={"text-3xl font-semibold py-8 sticky top-0 backdrop-blur-sm bg-white/90"}>
                         <span className={"far fa-square pr-4"}></span> Uncompleted Todos
                     </div>
                     <div>
