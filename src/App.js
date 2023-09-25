@@ -16,6 +16,9 @@ const App = () => (
                     <Tab className={"react-tabs__tab"}>All</Tab>
                     <Tab className={"react-tabs__tab"}>Completed</Tab>
                     <Tab className={"react-tabs__tab"}>Uncompleted</Tab>
+                    <div className={"absolute bottom-4 left-6 text-lg bg-inherit opacity-20"}>
+                        <span className={"fa fa-gear pr-2"}></span> Settings
+                    </div>
                 </TabList>
 
                 <TabPanel className={"react-tabs__tab-panel"}>
