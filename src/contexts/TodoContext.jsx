@@ -14,7 +14,7 @@ export const TodoProvider = ({ children }) => {
             .then((res) => res.json())
             .then((data) => {
                 if (!canceled) {
-                    setTodos(data);
+                    setTodos(data.slice(0, 20));
                 }
             })
             .catch((err) => {

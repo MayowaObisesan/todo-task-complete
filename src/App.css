@@ -64,12 +64,12 @@
     margin: auto;
 }
 
-.todo-input {
+/* .todo-input {
     position: sticky;
-    top: 0;
+    bottom: 0;
     display: flex;
     flex-flow: row nowrap;
-    width: 60%;
+    width: 75%;
     margin: 0 auto;
     background-color: #FFFFFF66;
     backdrop-filter: blur(4px);
@@ -78,7 +78,7 @@
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     font-size: 24px;
-}
+} */
 
 .todo-input input {
     outline: 0;
@@ -90,7 +90,7 @@
     font-size: inherit;
 }
 
-.todo-input button {
+/* .todo-input button {
     border: 0;
     border-radius: 8px;
     width: auto;
@@ -102,7 +102,7 @@
     color: white;
     font-weight: bold;
     cursor: pointer;
-}
+} */
 
 .todo-submit {
     background-color: red;
@@ -164,4 +164,97 @@
 .checked {
     text-decoration: line-through;
     color: darkgray;
+}
+
+
+/* TODO FORM */
+.todo-form-container {
+    position: fixed;
+    height: 100%;
+    width: 32%;
+    bottom: 0;
+    right: 0%;
+    background: lightslategray;
+}
+
+.todo-form-container::before {
+    position: fixed;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #FFFFFFBB;
+    backdrop-filter: blur(8px);
+}
+
+.todo-form-container span {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    z-index: 10;
+}
+
+.todo-input {
+    position: sticky;
+    /* bottom: 0; */
+    right: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto 0 auto;
+    background-color: #FFFFFF66;
+    backdrop-filter: blur(4px);
+    border: none;
+    /* margin-top: 80px; */
+    /* padding-top: 0.5rem; */
+    /* padding-bottom: 0.5rem; */
+    /* padding: 2rem; */
+    padding: 5rem 4rem 0;
+    font-size: 18px;
+    line-height: 40px;
+}
+
+.todo-input textarea {
+    position: relative;
+    display: block;
+    border-radius: 4px;
+    height: 80%;
+    background-color: white;
+    padding: 16px 24px;
+    margin: 8px 0;
+    outline: 2px solid lightgray;
+    resize: none;
+}
+
+.todo-input textarea:focus {
+    outline: 2px solid darkslategrey;
+    border: 2px solid lightgray;
+    outline-offset: 2px;
+    transition: outline .1s ease;
+}
+
+.todo-input button {
+    margin: 16px 4px;
+    border: 0;
+    border-radius: 8px;
+    width: auto;
+    height: 64px;
+    line-height: 64px;
+    padding: 0px 32px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.create-button {
+    position: sticky;
+    display: block;
+    top: 24px;
+    right: 32px;
+    height: 64px;
+    width: 240px;
+    padding: 16px 0;
 }
