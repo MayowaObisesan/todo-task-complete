@@ -1,34 +1,43 @@
 import TodoInput from './components/TodoInput';
-import "./App.css";
+import 'react-tabs/style/react-tabs.css';
 import "./output.css"
+import "./App.css";
 import { CompletedTodos, Todos, UncompletedTodos } from './components/Todos';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
 
 const App = () => (
     <div className="App">
         <section>
             <Tabs className={"react-tabs flex flex-row gap-12"} selectedTabClassName={"text-2xl font-bold"}>
-                <TabList className={"react-tabs__tab-list flex flex-col w-3/12 p-12"}>
-                    <Tab className={"react-tabs__tab cursor-pointer selected:font-bold"}>All</Tab>
-                    <Tab>Completed</Tab>
-                    <Tab>Uncompleted</Tab>
+                <TabList className={"react-tabs__tab-list flex flex-col align-items-center w-3/12"}>
+                    <div className={"text-3xl font-bold px-8 py-24 bg-blue-700 text-white rounded"}>
+                        Todo <br /> Dashboard
+                    </div>
+                    <Tab className={"react-tabs__tab"}>All</Tab>
+                    <Tab className={"react-tabs__tab"}>Completed</Tab>
+                    <Tab className={"react-tabs__tab"}>Uncompleted</Tab>
                 </TabList>
 
                 <TabPanel className={"react-tabs__tab-panel"}>
                     <div className={"todo-wrappe"}>
-                        <div className={"text-3xl py-8 sticky top-0"}>All Todos</div>
+                        <div className={"text-3xl font-semibold py-8 sticky top-0"}>
+                            <span className={"fa fa-list-check pr-4"}></span> All Todos
+                        </div>
                         <Todos />
                     </div>
                 </TabPanel>
                 <TabPanel className={"react-tabs__tab-panel"}>
-                    <div className={"text-3xl py-8"}>Completed Todos</div>
+                    <div className={"text-3xl font-semibold py-8 sticky top-0"}>
+                        <span className={"fa fa-square-check pr-4"}></span> Completed Todos
+                    </div>
                     <div>
                         <CompletedTodos />
                     </div>
                 </TabPanel>
                 <TabPanel className={"react-tabs__tab-panel"}>
-                    <div className={"text-3xl py-8"}>Uncompleted Todos</div>
+                    <div className={"text-3xl font-semibold py-8 sticky top-0"}>
+                        <span className={"far fa-square pr-4"}></span> Uncompleted Todos
+                    </div>
                     <div>
                         <UncompletedTodos />
                     </div>
